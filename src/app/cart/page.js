@@ -1,6 +1,7 @@
 "use client"
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductContext } from '../components/AppContext';
+import Image from 'next/image';
 
 export default function CartPage() {
     const { selectedproducts, setSelectedProducts } = useContext(ProductContext);
@@ -79,7 +80,7 @@ export default function CartPage() {
                 return (
                     <div className="flex mb-5 mt-5" key={productInfo._id}>
                         <div className="bg-gray-100 p-3 rounded-xl shrink-0">
-                            <img className="w-24" src={productInfo.picture} />
+                            <Image className="w-24" src={productInfo.picture} alt={productInfo.name} />
                         </div>
                         <div className="pl-4">
                             <h3 className="font-bold text-lg">{productInfo.name}</h3>

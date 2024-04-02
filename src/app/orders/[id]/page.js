@@ -1,5 +1,6 @@
 "use client"
 import { ProductContext } from '@/app/components/AppContext';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react'
 
@@ -24,7 +25,7 @@ export default function OrderPage() {
             setSelectedProducts([]);
         }
 
-    }, [])
+    }, [id, setSelectedProducts])
     return (
         <section className="max-w-2xl mx-auto mt-8">
             <div className="text-center">
@@ -39,7 +40,7 @@ export default function OrderPage() {
                 <ul className="divide-y divide-gray-200">
                     {order && order.products.map(product => (
                         <li key={product._id} className="py-2 flex items-center">
-                            <img src={product.picture} alt={product.name} className="w-12 h-12 mr-4" />
+                            <Image src={product.picture} alt={product.name} className="w-12 h-12 mr-4" />
                             <div>
                                 <p className="font-medium">{product.name}</p>
                                 <p className="text-sm">{product.description}</p>

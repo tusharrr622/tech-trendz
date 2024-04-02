@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProductContext } from "../AppContext";
+import Image from "next/image";
 
 export default function Product({ _id, name, picture, description, price }) {
     const { setSelectedProducts } = useContext(ProductContext);
@@ -12,7 +13,7 @@ export default function Product({ _id, name, picture, description, price }) {
         <div className="ml-10 px-5 snap-start flex-shrink-0 my-7">
             <div className="w-72">
                 <div className="bg-primary p-5 rounded-xl">
-                    <img src={picture} alt={name} />
+                    <Image src={picture} alt={name} />
                 </div>
                 <div className="mt-1">
                     <h3 className="font-bold text-lg">{name}</h3>
