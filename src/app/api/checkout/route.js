@@ -59,8 +59,8 @@ export async function POST(req) {
         line_items: stripeline_items,
         mode: 'payment',
         customer_email: email,
-        success_url: process.env.NEXTAUTH_URL + 'orders/' + orderDoc._id.toString() + '?clear-cart=1',
-        cancel_url: process.env.NEXTAUTH_URL + '/?canceled=true',
+        success_url: `${process.env.NEXTAUTH_URL}/orders/${orderDoc._id.toString()}?clear-cart=1`,
+        cancel_url: `${process.env.NEXTAUTH_URL}?canceled=true`,
         metadata: { orderId: orderDoc._id.toString() },
         payment_intent_data: {
             metadata: { orderId: orderDoc._id.toString() },
