@@ -30,27 +30,6 @@ export default function ProfilePage() {
 
   async function handleSubmit(ev, data) {
     ev.preventDefault();
-    // const savingPromise = new Promise(async (resolve, reject) => {
-    //   const res = await fetch('/api/profile', {
-    //     method: 'PUT',
-    //     body: JSON.stringify(data),
-    //     headers: { 'Content-Type': 'application/json' },
-    //   })
-
-    //   if (res.ok) {
-    //     resolve();
-    //   } else {
-    //     reject();
-    //   }
-
-    // })
-
-    // await toast.promise(savingPromise, {
-    //   loading: 'Saving...',
-    //   success: 'Profile saved!',
-    //   error: 'Error',
-    // });
-
     const savingPromise = new Promise(async (resolve, reject) => {
       const response = await fetch('/api/profile', {
         method: 'PUT',
